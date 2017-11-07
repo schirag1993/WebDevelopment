@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Circles</title>
+    <link rel="stylesheet" href="circles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"></script>
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+      var circles = [];
+      var keyData = {
+        q : {
+          color: 'white',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/bubbles.mp3']
+        })
+        },
+        w : {
+          color: 'blue',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/clay.mp3']
+        })
+        },
+        e : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/confetti.mp3']
+        })
+        },
+        r : {
+          color: 'red',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/corona.mp3']
+        })
+        },
+        t : {
+          color: 'pink',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/dotted-spiral.mp3']
+        })
+        },
+        y : {
+          color: 'orange',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/flash-1.mp3']
+        })
+        },
+        u : {
+          color: 'violet',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/flash-2.mp3']
+        })
+        },
+        i : {
+          color: 'green',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/flash-3.mp3']
+        })
+        },
+        o : {
+          color: 'yellow',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/glimmer.mp3']
+        })
+        },
+        p : {
+          color: 'indigo',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/moon.mp3']
+        })
+        },
+        a : {
+          color: 'black',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/pinwheel.mp3']
+        })
+        },
+        s : {
+          color: 'silver',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/piston-1.mp3']
+        })
+        },
+        d : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/piston-2.mp3']
+        })
+        },
+        f : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/piston-3.mp3']
+        })
+        },
+        g : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/prism-1.mp3']
+        })
+        },
+        h : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/prism-2.mp3']
+        })
+        },
+        j : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/prism-3.mp3']
+        })
+        },
+        k : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/splits.mp3']
+        })
+        },
+        l : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/squiggle.mp3']
+        })
+        },
+        z : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/strike.mp3']
+        })
+        },
+        x : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/suspension.mp3']
+        })
+        },
+        c : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/timer.mp3']
+        })
+        },
+        v : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/ufo.mp3']
+        })
+        },
+        b : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/veil.mp3']
+        })
+        },
+        n : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/wipe.mp3']
+        })
+        },
+        m : {
+          color: 'purple',
+          sound: new Howl({
+          src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/zig-zag.mp3']
+        })
+        }
+      }
+      var sound1 = new Howl({
+        src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/glimmer.mp3']
+      });
+      var sound2 = new Howl({
+        src: ['/Users/schirag/Documents/webprogs/Samples/Patatap_Clone/sounds/clay.mp3']
+      });
+      function onKeyDown(event) {
+        if(keyData[event.key]) {
+          var maxPoint = new Point(view.size.width, view.size.height);
+          var randomPoint = Point.random();
+          var point = maxPoint * randomPoint;
+          var newCircle = new Path.Circle(point, 300);
+          newCircle.fillColor = 'purple';
+        	circles.push(newCircle);
+          keyData[event.key].sound.play();
+
+        }
+      }
+      function onFrame(event) {
+        for(var i=0;i<circles.length;i++) {
+          circles[i].fillColor.hue+=1;
+          circles[i].scale(0.97);
+          if(circles[i].area < 1){
+          circles[i].remove();
+          circles.splice(i, 1);
+          i--;
+          console.log(circles);
+          }
+        }
+      }
+  </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
