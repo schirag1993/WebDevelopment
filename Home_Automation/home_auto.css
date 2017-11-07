@@ -1,0 +1,93 @@
+body {
+  font-family: 'Roboto';
+}
+
+h1 {
+  font-family: 'Roboto';
+  font-weight: 600;
+  text-align: center;
+  color: #4797d1;
+}
+
+.card-rule {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 4px 1px grey;
+}
+.card-rule:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
+.card {
+  border: 1px solid rgba(232, 230, 229,0.8);
+  border-top: 1px solid rgb(11, 108, 193);
+  padding-right: 2px;
+  padding: 2px;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  text-align: center;
+  padding-bottom: 2.5%;
+  text-transform: uppercase;
+  font-family: 'Oswald';
+  font-weight: 700;
+  letter-spacing: 5px;
+  background: #fafafa;
+  /*margin-right: 5px;*/
+  -moz-transform: scale(0.9);
+-webkit-transform: scale(0.9);
+-o-transform: scale(0.9);
+-ms-transform: scale(0.9);
+transform: scale(0.96);
+}
+
+.card:last-child {
+  margin-right: 0
+}
+
+.card:hover {
+  box-shadow: 1px 1px 20px 0px #E8E8E8;
+}
+.controls {
+  padding: 1%;
+  margin:1%;
+  text-align: center;
+}
+
+.toggles {
+  padding: 4%;
+}
+
+.rules {
+    height: 30px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+.rules:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+li.active {
+  background: rgba(160, 0, 0, 0.8);
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background: #76b5e2;
+}
+
+.rules {
+  width:60%;
+  margin: auto;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script  src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="home_auto.css">
+    <title>Control Station</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Control Station</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooms <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i> Kitchen</a></li>
+            <li><a href="#"><i class="fa fa-television" aria-hidden="true"></i> Hall</a></li>
+            <li><a href="#"><i class="fa fa-bed" aria-hidden="true"></i> Bedroom</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+<div class="row">
+  <div id="content">
+    <h1><i class="fa fa-home" aria-hidden="true"></i> Home <button type="button" name="button" class="btn btn-default btn-lg btn-danger">Kill All</button></h1>
+    <div class="rules">
+      <hr>
+    </div>
+    <div class="col-lg-4 col-md-6 col-xs-12 card">
+    <h2>Bedroom</h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <p>Lights</p>
+        <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+      </div>
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <p>Air Con</p>
+        <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+      </div>
+      <div class="col-lg-4 col-md-12 col-xs-12">
+        <p>Fan</p>
+        <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+      </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-xs-12 card">
+      <h2>Hall</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <p>Lights</p>
+          <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <p>Air Con</p>
+          <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+
+        </div>
+        <div class="col-lg-4 col-md-12 col-xs-12">
+          <p>Fan</p>
+          <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-xs-12 card">
+      <h2>Kitchen</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <p>Lights</p>
+          <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <p>Exhaust</p>
+          <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+          <div class="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-xs-12">
+          <p>Fan</p>
+          <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="primary"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+<div class="col-lg-6">
+<div id="tester" style="width:90%;height:250px;"></div>
+</div>
+<div class="col-lg-6">
+<div id="tester2" style="width:90%;height:250px;"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+TESTER = document.getElementById('tester');
+TESTER2 = document.getElementById('tester2');
+Plotly.plot( TESTER, [{
+x: [1, 2, 3, 4, 5],
+y: [1, 2, 4, 8, 16] }], {
+margin: { t: 0 } } );
+
+Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/wind_speed_laurel_nebraska.csv', function(rows){
+    var trace = {
+      type: 'scatter',                    // set the chart type
+      mode: 'lines',                      // connect points with lines
+      x: rows.map(function(row){          // set the x-data
+        return row['Time'];
+      }),
+      y: rows.map(function(row){          // set the x-data
+        return row['10 Min Sampled Avg'];
+      }),
+      line: {                             // set the width of the line.
+        width: 1
+      },
+      error_y: {
+        array: rows.map(function(row){    // set the height of the error bars
+          return row['10 Min Std Dev'];
+        }),
+        thickness: 0.5,                   // set the thickness of the error bars
+        width: 0
+      }
+    };
+
+    var layout = {
+      yaxis: {title: "Wind Speed"},       // set the y axis title
+      xaxis: {
+        showgrid: false,                  // remove the x-axis grid lines
+        tickformat: "%B, %Y"              // customize the date format to "month, day"
+      },
+      margin: {                           // update the left, bottom, right, top margin
+        l: 40, b: 10, r: 10, t: 20
+      }
+    };
+
+    Plotly.plot(document.getElementById('tester2'), [trace], layout, {showLink: false});
+});
+
+/* Current Plotly.js version */
+console.log( Plotly.BUILD );
+</script>
+  </body>
+</html>
